@@ -13,7 +13,8 @@ class Party:
     name: str
     join_code: str
     host_user_id: int
-
+    current_round_id: int
+    
 @dataclass
 class Song:
     id: int
@@ -29,4 +30,13 @@ class Bid:
     user_id: int
     song_id: int
     amount: int
+    round_id: int
+
+@dataclass
+class Round:
+    id: int
+    party_id: int
+    winning_bid_id: int | None = None
+    winning_song_id: int | None = None
+    is_active: bool = True
 
